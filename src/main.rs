@@ -26,12 +26,16 @@ fn Title() -> Element {
 
 #[component]
 fn DogCards() -> Element {
+    let skip = move |evt| {};
+    let save = move |evt| {};
+    let img_src = use_hook(|| "https://images.dog.ceo/breeds/pitbull/dog-3981540_1280.jpg");
+
     rsx! {
       div {
-        img { src: "https://images.dog.ceo/breeds/pitbull/dog-3981540_1280.jpg", height: "300px"}
+        img { src: "{img_src}" }
         div {
-            button { "save" }
-            button { "skip" }
+            button { onclick: skip, "skip" }
+            button { onclick: save, "save"}
         }
       }
     }
@@ -105,4 +109,30 @@ fn DogCards() -> Element {
 //     rsx! {
 //         "hello {cat.name}"
 //     }
+// }
+//
+//
+//
+//
+// // hooks
+//  Different from React:
+// - Dioxus is simpler, less boilerplate
+// - No need for useState separately
+//
+// ---
+// Rules for Hooks (Important!)
+//
+// 1. Only call hooks inside components - Not in regular functions
+// 2. Call in same order every time - Don't use hooks in if statements
+// 3. Top of component - Call hooks before rendering
+//
+// Bad (breaking rules):
+// if user_clicked {
+//     let state = use_hook(|| "value");  // Inside if statement!
+// }
+//
+// Good:
+// let state = use_hook(|| "value");  // Top level
+// if user_clicked {
+//     // Use state here, but don't call hook here
 // }
