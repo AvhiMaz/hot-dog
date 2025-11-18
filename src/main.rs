@@ -136,3 +136,34 @@ fn DogCards() -> Element {
 // if user_clicked {
 //     // Use state here, but don't call hook here
 // }
+//
+//
+// signal (in readt usestate)
+// //The Basic Idea
+// In React, we do:
+// javascriptconst [count, setCount] = useState(0);
+// In Dioxus with signals:
+// rustlet mut count = use_signal(|| 0);
+// Example
+//#[component]
+// fn Count() -> Element {
+//     let mut count = use_signal(|| 0);
+//     rsx! {
+//         document::Stylesheet{href: CSS}
+//         div {
+//             h1 {  "Count: {count}" }
+//             div {
+//                 button {
+//                     onclick: move |_| count += 1,
+//                     style: "cursor: pointer; margin-right: 5px",
+//                     "increment"
+//                 },
+//                 button {
+//                     onclick: move |_| count -= 1,
+//                     style: "cursor: pointer",
+//                     "decrement"
+//                 }
+//             }
+//         }
+//     }
+// }
