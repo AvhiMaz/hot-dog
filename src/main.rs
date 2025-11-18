@@ -10,12 +10,30 @@ fn main() {
 fn App() -> Element {
     rsx! {
         document::Stylesheet { href: CSS }
-        h1 { "Hello" }
+        Title {}
+        DogCards {}
+    }
+}
+
+#[component]
+fn Title() -> Element {
+    rsx! {
+        div {
+            h1 { "Hot Dog" }
+        }
+    }
+}
+
+#[component]
+fn DogCards() -> Element {
+    rsx! {
+      div {
         img { src: "https://images.dog.ceo/breeds/pitbull/dog-3981540_1280.jpg", height: "300px"}
         div {
             button { "save" }
             button { "skip" }
         }
+      }
     }
 }
 
