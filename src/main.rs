@@ -1,6 +1,7 @@
 use dioxus::prelude::*;
 
 mod assets;
+mod contextapi;
 mod counter;
 mod hooks;
 mod props;
