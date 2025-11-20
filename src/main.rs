@@ -26,8 +26,8 @@ fn Title() -> Element {
 
 #[component]
 fn DogCards() -> Element {
-    let skip = move |evt| {};
-    let save = move |evt| {};
+    let skip = move |_| {};
+    let save = move |_| {};
     let img_src = use_hook(|| "https://images.dog.ceo/breeds/pitbull/dog-3981540_1280.jpg");
 
     rsx! {
